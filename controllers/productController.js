@@ -40,9 +40,10 @@ class ProductController {
 
     async getOneProduct(req, res) {
         try {
-            const { id } = req.body
+            const { id } = req.params
             const product = await Product.findById(id)
             
+            console.log(product);
             return res.json(product)
         } catch (error) {
             res.status(500).json({ error: error.message})

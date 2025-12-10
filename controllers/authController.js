@@ -24,7 +24,7 @@ class authController {
             }
 
 
-            const { name, surname, phoneNumber, password, email  } = req.body;
+            const { name, surname, password, email  } = req.body;
             const candidate = await User.findOne({ email })
             
             if(candidate) {

@@ -29,7 +29,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 const start = async () => {
     try {
-        await mongoose.connect(process.env.DATABASE_URL)
+        await mongoose.connect(DATABASE_URL)
         app.listen(PORT, () => console.log(`Сервер запущен на ${PORT}`))
     } catch (error) {
         console.log("Ошибка при запуске сервера", error);
